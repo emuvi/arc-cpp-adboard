@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QVector>
 #include <QPoint>
+#include "element.h"
 
 class Renderer : public QWidget
 {
@@ -23,6 +24,7 @@ private slots:
     void mouseReleaseEvent(QMouseEvent *e) override;
 
 private:
+    QVector<QSharedPointer<Element>> elements;
     QVector<QPoint> points;
 };
 
