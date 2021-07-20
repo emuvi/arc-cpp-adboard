@@ -3,13 +3,15 @@
 
 #include "element.h"
 
+#include <QPainterPath>
+
 class Track : public Element
 {
 public:
-    Track(QVector<QPoint> &fromPoints);
+    Track(QVector<QPointF> &points);
     void paint(QPainter &painter) override;
 private:
-    QVector<QPoint> points;
+    QPainterPath path;
 };
 
 #endif // TRACK_H

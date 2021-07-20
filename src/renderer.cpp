@@ -21,7 +21,7 @@ QSize Renderer::minimumSizeHint() const
 
 QSize Renderer::sizeHint() const
 {
-    return QSize(400, 200);
+    return QSize(800, 600);
 }
 
 void Renderer::paintEvent(QPaintEvent*)
@@ -29,15 +29,13 @@ void Renderer::paintEvent(QPaintEvent*)
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
     for (auto& element : elements) {
+        painter.save();
         element->paint(painter);
+        painter.restore();
     }
     for (auto& point : points) {
         painter.drawPoint(point);
     }
-    QPainterPath path;
-    path.moveTo(30, 30);
-    path.cubicTo(40, 60, 60, 40, 100, 100);
-    painter.drawPath(path);
 }
 
 void Renderer::mousePressEvent(QMouseEvent* e)

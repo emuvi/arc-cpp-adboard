@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QVector>
-#include <QPoint>
+#include <QPointF>
 #include "element.h"
 
 class Renderer : public QWidget
@@ -25,7 +25,7 @@ private slots:
 
 private:
     QVector<QSharedPointer<Element>> elements;
-    QVector<QPoint> points;
+    QVector<QPointF> points;
 };
 
 #endif // RENDERER_H
